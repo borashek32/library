@@ -25,10 +25,11 @@
                                             @csrf
                                             <div class="mb-4">
 
-{{--Вывод категорий для подписки на них--}}
+                                            {{--Вывод категорий для подписки на них--}}
                                                 <label for="img" class="block text-gray-700 text-xl font-bold" style="margin-bottom: -6px">
-                                                    Выберите рубрику/и:
+                                                    Выберите рубрику:
                                                 </label>
+                                                <span class="text-sm text-center">*за один раз можно подписаться на одну рубрику</span>
                                                 <div class="mt-4">
                                                     @foreach($categories as $category)
                                                         <label class="flex justify-start items-start mb-2">
@@ -49,7 +50,7 @@
                                                 @enderror
                                             </div>
 
-{{--Оформление подписки--}}
+                                        {{--Оформление подписки--}}
                                             <label for="email">
                                                 Электронная почта
                                             </label>

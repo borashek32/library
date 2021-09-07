@@ -47,10 +47,12 @@ class PostController extends Controller
             'text'        => $request->text
         ]);
 
-        $subscriptions = Subscription::where('category_id', $request->category_id)->get();
-        foreach ($subscriptions as $subscription) {
-            Mail::to($subscription->email)->send(new PostMail($post));
-        }
+        // Не получилось реализовать отправку уведомлений на почту, как только появляется новый пост
+        // Что-то изменилось в настройке smtp
+//        $subscriptions = Subscription::where('category_id', $request->category_id)->get();
+//        foreach ($subscriptions as $subscription) {
+//            Mail::to($subscription->email)->send(new PostMail($post));
+//        }
 
         return redirect('/dashboard/admin/posts')
             ->with('success', 'Новый пост был успешно добавлен');

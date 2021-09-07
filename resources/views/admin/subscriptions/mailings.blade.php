@@ -50,9 +50,6 @@
                     @endforeach
                     </tbody>
                 </table>
-                <div class="mt-4">
-                    {{ $subscriptions->links() }}
-                </div>
                 @else
                     <p>Подписок пока нет</p>
                 @endif

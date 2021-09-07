@@ -12,11 +12,11 @@
                         <a href="{{ route('category', $category->id) }}">
                             <li class="flex row">
                                 <p class="text-white underline text-bold text-2xl">
-                                    {{ $category->name }}
+                                    {{ $category->name }} - ({{ $category->posts->count() }})
                                 </p>
-                                <span class="text-white">
-                                ({{ $category->posts->count() }})
-                            </span>
+                                <p class="text-white underline text-xs ml-4 mt-2">
+                                    <a href="{{ route('subscriptions.index') }}">Подписаться</a>
+                                </p>
                             </li>
                         </a>
                     @endforeach

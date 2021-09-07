@@ -31,4 +31,5 @@ Route::get('/dashboard/admin/mailings-category/{id}', [SubscriptionController::c
     ->name('subscriptions-category');
 
 // User dashboard
-Route::resource('/dashboard/subscriptions', \App\Http\Controllers\SubscriptionController::class);
+Route::resource('/dashboard/subscriptions', \App\Http\Controllers\SubscriptionController::class)
+    ->middleware('auth');

@@ -11,17 +11,19 @@ class SubscriptionController extends Controller
 {
     public function index()
     {
-        $subscriptions = Subscription::latest()
-            ->paginate(10);
+        $subscriptions = Subscription::orderBy('created_at', 'DESC')->take(10)->get();
 
         return view('admin.subscriptions.mailings', compact('subscriptions'));
     }
 
     public function subscriptionsCategory($id)
     {
-        $category = Category::where('id', $id)->first();
+        $subscriptions = Subscription::where('category_id', $id)
+            ->orderBy('created_at', 'DESC')
+            ->take(10)
+            ->get();
 
-        return view('admin.subscriptions.subscriptions-category', compact('category'));
+        return view('admin.subscriptions.subscriptions-category', compact('subscriptions'));
     }
 
     public function destroy($id)

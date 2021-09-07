@@ -18,8 +18,8 @@ class Category extends Model
         return $this->hasMany(Post::class);
     }
 
-    public function users()
+    public function subscriptions()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Subscription::class);
     }
 }

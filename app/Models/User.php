@@ -25,11 +25,6 @@ class User extends Authenticatable
         return $this->hasMany(Subscription::class);
     }
 
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
-    }
-
     /**
      * The attributes that are mass assignable.
      *
